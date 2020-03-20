@@ -9,10 +9,12 @@ const SmurfForm = props => {
         height: ""
     });
 
-    const handleSubmit = e => {
-        e.preventDefault();
-        props.postSmurfs(smurfPost);
-    }
+    // const handleChanges = e => {
+    //     setSmurfPost({
+    //         ...smurfPost,
+    //         [e.target.name]: e.target.value
+    //     })
+    // }
 
     const handleName = e => {
         setSmurfPost({
@@ -32,6 +34,16 @@ const SmurfForm = props => {
         setSmurfPost({
             ...smurfPost,
             height: e.target.value
+        })
+    }
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        props.postSmurfs(smurfPost);
+        setSmurfPost({
+            name: "",
+            age: "",
+            height: ""
         })
     }
 

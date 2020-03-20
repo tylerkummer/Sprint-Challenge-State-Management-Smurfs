@@ -2,15 +2,16 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getSmurfs } from '../actions/actions';
 
-const SmurfList = ({ smurfs, getSmurfs }) => {
+const SmurfList = props => {
     useEffect(() => {
-        console.log("Use Effect", getSmurfs());
-        getSmurfs();
-    }, [getSmurfs])
+        console.log("Use Effect", props.getSmurfs());
+        props.getSmurfs();
+    }, [])
 
     return (
         <>
-            {smurfs.map(smurf => {
+            {props.smurfs.map(smurf => {
+                console.log("Smurf", smurf);
                 return (
                     <div key={smurf.id}>
                         {smurf.name} <br />
