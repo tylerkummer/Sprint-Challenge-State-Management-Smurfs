@@ -8,6 +8,8 @@
 
 1. What is the difference between Application state and Component state? When would be a good time to use one over the other?
 
+    <!-- Application State is global -->
+
     Component state uses setState() which schedules an update to the component's state object, so when a state changes the component re-renders. The application state is immutable, when the application state changes the state is cloned not mutated. Application state would be good to use when you want to syinc across all layers of application.
 
 1. Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?

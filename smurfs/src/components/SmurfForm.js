@@ -9,31 +9,10 @@ const SmurfForm = props => {
         height: ""
     });
 
-    // const handleChanges = e => {
-    //     setSmurfPost({
-    //         ...smurfPost,
-    //         [e.target.name]: e.target.value
-    //     })
-    // }
-
-    const handleName = e => {
+    const handleChanges = e => {
         setSmurfPost({
             ...smurfPost,
-            name: e.target.value
-        })
-    }
-
-    const handleAge = e => {
-        setSmurfPost({
-            ...smurfPost,
-            age: e.target.value
-        })
-    }
-
-    const handleHeight = e => {
-        setSmurfPost({
-            ...smurfPost,
-            height: e.target.value
+            [e.target.name]: e.target.value
         })
     }
 
@@ -48,33 +27,36 @@ const SmurfForm = props => {
     }
 
     return (
-        <form>
-            <input 
-                type="text"
-                placeholder="Smurf Name"
-                value={smurfPost.name}
-                onChange={handleName}
-            />
+        <>
+            <form>
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Smurf Name"
+                    value={smurfPost.name}
+                    onChange={handleChanges}
+                />
 
-            <input 
-                type="text"
-                placeholder="Smurf Age"
-                value={smurfPost.age}
-                onChange={handleAge}
-            />
+                <input
+                    type="text"
+                    name="age"
+                    placeholder="Smurf Age"
+                    value={smurfPost.age}
+                    onChange={handleChanges}
+                />
 
-            <input 
-                type="text"
-                placeholder="Smurf Height"
-                value={smurfPost.height}
-                onChange={handleHeight}
-            />
-
-            <button onClick={handleSubmit}>Submit</button>
-
-        </form>
+                <input
+                    type="text"
+                    name="height"
+                    placeholder="Smurf Height"
+                    value={smurfPost.height}
+                    onChange={handleChanges}
+                />
+            </form>
+            <button onClick={handleSubmit}>Create Smurf</button>
+        </>
     )
-    
+
 }
 
 const mapStateToProps = state => {
